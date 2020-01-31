@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ICATask4.SkillService.SkillsDTO>
+
+@{
+    ViewBag.Title = "ShowSkills";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ShowSkills</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.skillCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.skillDescription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.skillCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.skillDescription)
+        </td>
+        
+    </tr>
+}
+
+</table>

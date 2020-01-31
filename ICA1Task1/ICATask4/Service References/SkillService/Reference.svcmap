@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a52069a5-af50-4f16-9195-dade20bacf8f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://skillservice.azurewebsites.net/SkillService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SkillService.xsd" MetadataType="Schema" ID="4c0cb488-dec4-427a-a2cc-cabbd1d5a05c" SourceId="1" SourceUrl="http://skillservice.azurewebsites.net/SkillService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SkillService.wsdl" MetadataType="Wsdl" ID="a7f0e80e-9a76-463f-9a85-e5d06bb2af75" SourceId="1" SourceUrl="http://skillservice.azurewebsites.net/SkillService.svc?wsdl" />
+    <MetadataFile FileName="SkillService1.xsd" MetadataType="Schema" ID="d7fb9c87-4e20-47da-939b-f7484ba73f2e" SourceId="1" SourceUrl="http://skillservice.azurewebsites.net/SkillService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SkillService.disco" MetadataType="Disco" ID="8473518c-71d9-4b82-8151-63e527b6143f" SourceId="1" SourceUrl="http://skillservice.azurewebsites.net/SkillService.svc?disco" />
+    <MetadataFile FileName="SkillService2.xsd" MetadataType="Schema" ID="4f4f1c5f-e62e-45ce-a933-cd7f65413161" SourceId="1" SourceUrl="http://skillservice.azurewebsites.net/SkillService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

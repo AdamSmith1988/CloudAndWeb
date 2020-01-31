@@ -1,0 +1,10 @@
+F:\Uni\3rd Year\Cloud and Web Services\ICA\Task 1\ICA1Task1\StaffSkillModel\bin\Debug\StaffSkillModel.dll.config
+F:\Uni\3rd Year\Cloud and Web Services\ICA\Task 1\ICA1Task1\StaffSkillModel\bin\Debug\StaffSkillModel.dll
+F:\Uni\3rd Year\Cloud and Web Services\ICA\Task 1\ICA1Task1\StaffSkillModel\bin\Debug\StaffSkillModel.pdb
+F:\Uni\3rd Year\Cloud and Web Services\ICA\Task 1\ICA1Task1\StaffSkillModel\bin\Debug\EntityFramework.dll
+F:\Uni\3rd Year\Cloud and Web Services\ICA\Task 1\ICA1Task1\StaffSkillModel\bin\Debug\EntityFramework.SqlServer.dll
+F:\Uni\3rd Year\Cloud and Web Services\ICA\Task 1\ICA1Task1\StaffSkillModel\bin\Debug\EntityFramework.xml
+F:\Uni\3rd Year\Cloud and Web Services\ICA\Task 1\ICA1Task1\StaffSkillModel\bin\Debug\EntityFramework.SqlServer.xml
+F:\Uni\3rd Year\Cloud and Web Services\ICA\Task 1\ICA1Task1\StaffSkillModel\obj\Debug\StaffSkillModel.csprojResolveAssemblyReference.cache
+F:\Uni\3rd Year\Cloud and Web Services\ICA\Task 1\ICA1Task1\StaffSkillModel\obj\Debug\StaffSkillModel.dll
+F:\Uni\3rd Year\Cloud and Web Services\ICA\Task 1\ICA1Task1\StaffSkillModel\obj\Debug\StaffSkillModel.pdb

@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICA1Task1", "ICA1Task1\ICA1Task1.csproj", "{D9C11D68-EA80-4415-9BEB-5BC0303BF7ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CFEDModel", "CFEDModel\CFEDModel.csproj", "{53FB58DF-B39E-429A-8B70-EB821BD69DB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICATask2", "ICATask2\ICATask2.csproj", "{18A25702-4983-447B-A370-AD9ACF9014BF}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Task3", "http://localhost:25906", "{448841DB-8CEE-452A-8F21-020343A0DB0D}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_25906"
+		Debug.AspNetCompiler.PhysicalPath = "Task3\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_25906\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_25906"
+		Release.AspNetCompiler.PhysicalPath = "Task3\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_25906\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "Task3\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICATask4", "ICATask4\ICATask4.csproj", "{98F56B3E-4C0C-47BD-BD9A-A77302216A53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaffSkillModel", "StaffSkillModel\StaffSkillModel.csproj", "{C65CE783-9452-43E8-808D-50808C806361}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9C11D68-EA80-4415-9BEB-5BC0303BF7ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9C11D68-EA80-4415-9BEB-5BC0303BF7ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9C11D68-EA80-4415-9BEB-5BC0303BF7ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9C11D68-EA80-4415-9BEB-5BC0303BF7ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53FB58DF-B39E-429A-8B70-EB821BD69DB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53FB58DF-B39E-429A-8B70-EB821BD69DB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53FB58DF-B39E-429A-8B70-EB821BD69DB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53FB58DF-B39E-429A-8B70-EB821BD69DB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18A25702-4983-447B-A370-AD9ACF9014BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18A25702-4983-447B-A370-AD9ACF9014BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18A25702-4983-447B-A370-AD9ACF9014BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18A25702-4983-447B-A370-AD9ACF9014BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{448841DB-8CEE-452A-8F21-020343A0DB0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{448841DB-8CEE-452A-8F21-020343A0DB0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{448841DB-8CEE-452A-8F21-020343A0DB0D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{448841DB-8CEE-452A-8F21-020343A0DB0D}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{98F56B3E-4C0C-47BD-BD9A-A77302216A53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98F56B3E-4C0C-47BD-BD9A-A77302216A53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98F56B3E-4C0C-47BD-BD9A-A77302216A53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98F56B3E-4C0C-47BD-BD9A-A77302216A53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C65CE783-9452-43E8-808D-50808C806361}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C65CE783-9452-43E8-808D-50808C806361}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C65CE783-9452-43E8-808D-50808C806361}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C65CE783-9452-43E8-808D-50808C806361}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

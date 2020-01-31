@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page - My Simple Single Page App</title>
+    <style>
+        table td {
+            padding: 10px,10px,10px,10px;
+        }
+    </style>
+    <link href="Content/Site.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <!-- Start of javascript -->
+    <script src="Scripts/modernizr-2.6.2.js"></script>
+<script>
+    //Global variables
+    var buhttp = new XMLHttpRequest(); // requests the data listed in GetBuList function
+        var staffhttp = new XMLHttpRequest(); // requests the data within the getStaff function
+            var requestStaffDetailhttp = new XMLHttpRequest(); // requests the data in the getStaffDetails function
+                var buurl = "http://localhost:33103/api/businessUnit"; // creating variable buurl to get all business units
+                    var staffurl = "http://localhost:33103/api/Staff/BusinessUnit/"; // creating variable staffurl to get a staff member from a certain business unit.
+                        var detailurl = "http://localhost:33103/api/Staff/"; // creating variable detailurl to Staff
+    
+        
+
+
+   
+    function start() // this function comes to life when the window opens
+    {
+        document.getElementById("detaillist").style.visibility = "hidden"; //setting the element id detaillist's visibility to hidden.
+            document.getElementById("detail").style.visibility = "hidden"; //setting the element id detail's visibility to hidden.
+                buhttp.onreadystatechange = GetBuList; // the onreadystatechange event is triggered every time the readyState changes / then start function GetBuList
+                    buhttp.open("GET", buurl); //get data from the url ("h ttp://localhost:33103/api/businessUnit")
+                        buhttp.send(); //send the data
+    }
+
+    function GetBuList()//This function comes to life when the onereadystatechange event was triggered in function start
+    {
+        
+        if (buhttp.readyState == 4 && buhttp.status == 200)//The onreadystate event is triggered five times (0-4), one time for each change in readyState.
+        {
+            var businessUnits = JSON.parse(buhttp.responseText); //method parses a string as JSON
+                displayItemsInBuList(businessUnits); //start the displayitemsinBuList function / array
+        }
+    }
+
+
+    function displayItemsInBuList(arr)
+    {
+        var table = document.getElementById("bulist"); // grab hold of the table object
+            table.innerHTML = "";// Empty the table tag
+                for (var i = 0; i < arr.length; i++) // walk down the LIST array
+        {
+            var row = table.insertRow(0); // insert a row in the next space available
+                var cell1 = row.insertCell(0); // insert td within that row
+                    var cell2 = row.insertCell(1); // insert another td withing the same row
+                        cell1.innerHTML = arr[i].title;
+                            var id = arr[i].businessUnitCode;// populate the first td with data from the array
+                                cell2.innerHTML = "&nbsp&nbsp&nbsp&nbsp<a href='#'     id='" + id + "' " + " >List Staff</a>"; // populate the second row with a link
+                                    document.getElementById(id).onclick = getStaff;// bind this new link to a delete method
+        }
+    }
+
+  
+    function getStaff(e)// getting a bu with the parameter e
+    {
+        var detailUrl = staffurl + e.target.id; //creating variable detailURL which is equal to e which is the id targeted.
+            staffhttp.onreadystatechange = requestDetail; // the onreadystatechange event is triggered every time the readyState changes / then start function requestDetail
+                staffhttp.open("GET", detailUrl); //this gets the url of staff which is at the top (h ttp://localhost:33103/api/Staff/)
+                    staffhttp.send(); //sent the data. 
+
+    }
+
+   
+    function requestDetail()
+    {
+        if (staffhttp.readyState == 4 && staffhttp.status == 200) //The onreadystate event is triggered five times (0-4), one time for each change in readyState.
+        {
+            var staffList = JSON.parse(staffhttp.responseText);  //method parses a string as JSON
+            displayDetail(staffList); //start the dispalyDetail function / array
+        }
+    }
+
+  
+    function displayDetail(arr)
+    {
+                document.getElementById("detaillist").style.visibility = "visible";// grab hold of the table object
+                    var table = document.getElementById("stafflist");
+                        table.style.visibility = "visible";
+
+        table.innerHTML = ""; // Empty the table tag
+        for (var i = 0; i < arr.length; i++)  // walk down the LIST array
+        {
+            
+            var row = table.insertRow(0); // insert a row in the next space available
+                var cell1 = row.insertCell(0); // insert td within that row           
+                var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+                        cell1.innerHTML = arr[i].firstName + " " + arr[i].lastName; // insert another td withing the same row
+                        var id = arr[i].staffCode; // populate the first td with data from the array
+            
+                        cell2.innerHTML = "&nbsp&nbsp&nbsp&nbsp<a href='#'     id='" + id + "' " + " >Staff Detail</a>"; // populate the second row with a link
+                       document.getElementById(id).onclick = getStaffDetails; // bind this new link to a delete method
+
+           
+            
+        }
+    }
+
+
+    function getStaffDetails(e) // getting stafffrom a requested bu (e) as above
+    {
+        var detailUrl = detailurl + e.target.id //creating variable detailURL which is equal to e which is the id targeted.
+        requestStaffDetailhttp.onreadystatechange = staffDetails; // the onreadystatechange event is triggered every time the readyState changes / then start function staffDetails
+        requestStaffDetailhttp.open("GET", detailUrl); //this gets the url of staff which is at the top (h ttp://localhost:33103/api/Staff/)
+                    requestStaffDetailhttp.send(); //send the data. 
+    }
+
+
+   
+    function staffDetails()
+    {
+        if (requestStaffDetailhttp.readyState == 4 && requestStaffDetailhttp.status == 200) //The onreadystate event is triggered five times (0-4), one time for each change in readyState.
+        {
+            var Staff = JSON.parse(requestStaffDetailhttp.responseText); //creating variable staff which parses a string as JSON
+            displayStaff(Staff); //start the Start the display Staff function / array
+        }
+    }
+
+    
+    function displayStaff(arr)
+    {
+        document.getElementById("detail").style.visibility = "visible"; //this gets all of the information from the element id detail within the div tag, below. 
+
+            document.getElementById("itemId").innerHTML = arr.staffCode; // getting the three elements listed below to get staffCode, Names, and Start Date
+                document.getElementById("itemName").innerHTML = arr.firstName + " " + arr.lastName;
+                    document.getElementById("itemDetail").innerHTML = arr.startDate; // trying to pass startDate although it only comes as blank on the screen.
+    }
+
+
+    
+    window.onload = start; //when the page has loaded, this method will start.
+
+
+</script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Application name</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+
+
+
+        <div class="jumbotron">
+            <h1>ASP.NET</h1>
+            <p class="lead">This SPA uses raw dirty JavaScript to demo the relationship between Javascript and Http</p>
+            <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Our Business Units</h2>
+                <table id="bulist"></table>
+
+            </div>
+            <div class="col-md-4">
+
+                <h2 id="detaillist">Staff List</h2>
+                <table id="stafflist"></table>
+
+            </div>
+            <div class="col-md-4"> 
+                <div id="detail">
+                    <h2>Staff Detail</h2>
+                    <p id="itemId"></p>
+                    <p id="itemName"></p>
+                    <p id="itemDetail"></p>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+        <footer>
+            <p>&copy; 2015 - My ASP.NET Application</p>
+        </footer>
+
+        <script src="Scripts/jquery-1.10.2.min.js"></script>
+        <script src="Scripts/bootstrap.min.js"></script>
+    </div>
+
+
+
+
+</body>
+</html>

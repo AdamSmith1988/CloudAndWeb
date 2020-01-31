@@ -1,0 +1,36 @@
+﻿@model IEnumerable<StaffSkillModel.StaffSkill>
+
+@{
+    ViewBag.Title = "Skills";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Skills</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StaffCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SkillCode)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StaffCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SkillCode)
+        </td>
+        @Html.ActionLink("Add a new skill", "AddSkill", new { staffCode = item.StaffCode })
+    </tr>
+}
+
+</table>

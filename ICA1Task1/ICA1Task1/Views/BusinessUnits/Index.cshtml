@@ -1,0 +1,66 @@
+﻿@model IEnumerable<CFEDModel.BusinessUnit>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.businessUnitCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.title)
+        </th>
+        </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.businessUnitCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.officeAddress1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.officeAdresss2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.officeAddress3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.officePostCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.officeContact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.officePhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.officeEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Active)
+        </td>*@
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.businessUnitId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.businessUnitId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.businessUnitId })
+        </td>
+    </tr>
+}
+
+</table>
